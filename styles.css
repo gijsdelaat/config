@@ -1,0 +1,321 @@
+
+body {
+    font-family: 'Gotham', sans-serif; /* Apply Gotham font */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    color: #333;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000; /* Ensure header stays on top */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    margin-top: 60px; /* Adjust based on header height */
+}
+
+.sidebar {
+    width: 70%;
+    height: calc(100vh - 60px); /* Adjust based on header height */
+    background-color: #fff;
+    
+}
+
+.scene-container {
+    width: 100%; /* Ensure full width */
+    height: 100%; /* Full height of its parent (sidebar) */
+}
+
+.content {
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: #fff;
+    padding-left: 20px; /* Spacing from the sidebar */
+}
+
+.auth-menu a, .config-options a {
+    color: #333;
+    text-decoration: none;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 14px; /* Smaller font size for config menu links */
+}
+
+.auth-menu a:hover, .config-options a:hover {
+    background-color: #F5F5F5;
+}
+
+.auth-menu .signup {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.auth-menu .signup:hover {
+    background-color: #595959;
+    color:  #fff
+}
+ .logo {
+    height: 50px; /* Adjust based on your design */
+    margin-right: 20px; /* Space between logo and title */
+}
+        
+
+.config-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+
+
+.config-image, .config-options {
+    height: 500px; /* Ensures that both sections have the same height */
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .configurator {
+        flex-direction: column;
+    }
+    .config-image, .config-options {
+        flex: none;
+        width: 100%; /* Make each take full width on smaller screens */
+    }
+}
+.section {
+    width: 100%; /* Ensures the section takes the full width of its parent */
+    display: flex;
+    max-height: 500px;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 20px; /* Adds spacing between each section */
+    visibility: visible;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+
+}
+        .section h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .section.hidden {
+            max-height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .button {
+            background-color: #fff;
+            border: 1px solid #333;
+            color: #333;
+            padding: 15px;
+            text-align: start;
+            width: 80%; /* Makes the button take up 80% of the .config-options width */
+            margin: 5px 0; /* Adds spacing above and below each button */
+            cursor: pointer;  
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button:hover {
+            background-color: #fff;
+            border: 2px solid #007bff
+        }
+        footer {
+            background-color: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .configurator {
+                flex-direction: column;
+            }
+            .button {
+                display: block;
+                margin: 10px auto;
+            }
+            .config-image {
+    width: 600px; /* Width of the 3D scene container */
+    height: 400px; /* Height of the 3D scene container */
+    margin: auto; /* Centering if needed */
+}
+
+        }
+        .info-box {
+            margin: auto;
+            width: 80%;
+            background-color: #f5f5f5;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            bottom: 10px;
+
+        }
+        .faded-text{
+            color: #333;
+            opacity: 70%;
+        }
+        .info-link {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center content horizontally if needed */
+            color: #333;
+            text-decoration: none;
+            padding: 8px 0; /* Adjust padding as necessary */
+            width: 100%; /* Full width of its container */
+            text-align: center;
+        }
+        
+        .help-icon {
+    width: 30px; /* Adjust based on your preference */
+    height: auto;
+    transform: translateY(9px); /* Nudge for alignment; adjust as necessary */
+    margin-right: 20px;
+}
+        
+
+
+        .divider {
+            height: 1px;
+            background-color: #ccc; /* Light grey for the divider */
+            width: 100%; /* Match the width of the info-box */
+            margin: 8px 0; /* Add some vertical spacing */
+        }
+        
+        .sidebar {
+            position: relative; /* Needed for .info-box positioning */
+            min-height: 100%; /* Ensure sidebar stretches to at least the height of the viewport */
+            padding-bottom: 120px; /* Space at the bottom for the info box */
+            box-sizing: border-box; /* Includes padding in the element's total height and width */
+        }
+        
+        .options-container {
+            align-self: flex-start;
+            background-color: #f5f5f5;
+            color: #333;
+            text-align: start;
+            width: 80%; /* Makes the button take up 80% of the .config-options width */
+            margin: 5px 0; /* Adds spacing above and below each button */
+            cursor: pointer;  
+            border-radius: 5px;
+        }
+        
+        .option-tabs {
+
+            display: flex;
+            align-self: center;
+            margin:5px;
+
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .option-tab {
+            flex: auto;
+            padding: 10px;
+            border: none;
+            background-color: #f5f5f5;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .option-tab[aria-selected="true"] {
+            background-color: #ffffff;
+            color: #000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dimension-input {
+            display: none; /* Initially hidden */
+            transition: opacity 0.3s ease, max-height 0.3s ease;
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .dimension-input.active {
+            display: block; /* Shown when active */
+            max-height: 100px; /* Adjust based on content */
+            opacity: 1;
+        }
+        
+        input[type=range] {
+            /* Standard properties */
+            width: 100%;
+            height: 5px;
+            background: #ddd;
+            outline: none;
+        }
+        
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+        
+        input[type=range]::-moz-range-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+        
+        input[type=range]::-ms-thumb {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #333;
+            cursor: pointer;
+        }
+        
+        
+        input[type=number] {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            width: 80px; /* Fixed width */
+            margin-left: 10px;
+        }
+        
+        
+        /* Adjust the sidebar padding and possibly the height of the .sidebar 
+           to ensure there's enough space at the bottom for the .info-box */
+        
+        
+           .hidden {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.3s ease-out, max-height 0.3s ease-out;
+        }
+        

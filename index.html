@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model 3 Configurator - Modern Progress Bar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://cdn.shopify.com/s/files/1/0730/1179/0151/files/logo-no-background.svg?v=1711808468" alt="Logo" class="logo">
+        <div class="auth-menu">
+            <a href="/login">Login</a>
+            <a href="/signup" class="signup">Sign Up</a>
+        </div>
+    </div>
+    
+    
+
+<div class="container">
+    <div class="sidebar">
+    <div class="scene-container" id="scene-container"></div>
+        <div class="info-box">
+            <p class="faded-text"><img src="https://cdn.shopify.com/s/files/1/0730/1179/0151/files/up_arrow_circle_icon_124244.svg?v=1711831510" alt="Help Icon" class="help-icon">Need Help? Chat with an Employee | Or Check Our Knowledge Base</p>
+            <!-- Add more information or links as needed -->
+        </div>
+
+</div>
+<div class="content">
+    <div class="config-options">
+        <div class="section">
+            <h2>Seal Shape</h2>
+            <div class="options-container">
+                <div class="option-tabs">
+                    <button class="option-tab" data-category="sealShape" aria-selected="true" onclick="selectOption('sealShape', 'circular')">Circular</button>
+                    <button class="option-tab" data-category="sealShape" aria-selected="false" onclick="selectOption('sealShape', 'rectangular')">Rectangular</button>
+                    <button class="option-tab" data-category="sealShape" aria-selected="false" onclick="selectOption('sealShape', 'straight')">Straight</button>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="section" id="sealExpansionSection">
+            <h2>Seal Expansion</h2>
+            
+                <button class="button" id="create-box">Radial Out</button>
+                <button class="button" id="create-circle">Radial In</button>
+                <button class="button" id="create-line">Axial</button>
+        </div>
+        
+<div class="section" id="sealDimensions">
+            <h2>Seal Dimensions</h2>
+            <!-- Length -->
+    <div class="dimension-input" id="lengthInput">
+        <label for="lengthSlider">Length (mm):</label>
+        <input type="range" id="lengthSlider" min="50" max="10000" value="100">
+        <input type="number" id="lengthText" min="50" max="10000" value="100">
+    </div>
+
+    <!-- Width -->
+    <div class="dimension-input" id="widthInput">
+        <input type="number" id="radiusText" min="50" max="10000" value="100">
+    </div>
+
+    <!-- Diameter -->
+    <div class="dimension-input" id="diameterInput">
+        <label for="diameterSlider">Diameter (mm):</label>
+        <input type="range" id="diameterSlider" min="50" max="10000" value="100">
+        <input type="number" id="diameterText" min="50" max="10000" value="100">
+    </div>
+</div>
+
+        
+        
+        <div class="section">
+            <h2>Sealing Profile</h2>
+            <button class="button" id="create-box">Sealing</button>
+            <button class="button" id="create-circle">Clamping</button>
+            <button class="button" id="create-line">Moving</button>
+        </div>
+        
+        <div class="section">
+            <h2>Choose Your Color</h2>
+            <button class="button">Black</button>
+            <button class="button">White</button>
+            <button class="button">Red</button>
+        </div>
+        
+        <div class="section">
+            <h2>Interior Options</h2>
+            <button class="button">All Black</button>
+            <button class="button">Black & White</button>
+        </div>
+        
+        <div class="section">
+            <h2>Additional Packages</h2>
+            <button class="button">Autopilot</button>
+            <button class="button">Full Self-Driving</button>
+        </div>
+    </div>
+</div>
+<div id="helpButton" class="help-button" onclick="toggleChatbox()">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+
+</div>
+<div id="helpButton" class="help-button" onclick="toggleChatbox()">
+    ?
+</div>
+
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="script.js"></script>
+
+
